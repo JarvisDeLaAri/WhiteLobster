@@ -1,0 +1,44 @@
+# White Lobster — WITH GPU (NVIDIA Quadro P2200 / 5GB VRAM)
+# Windows Docker Desktop + WSL2 — GPU passthrough automatic
+# 
+# Usage: docker compose -f docker-compose.gpu.yml up -d
+# Verify GPU: docker exec white-lobster nvidia-smi
+
+version: "3.8"
+
+services:
+  white-lobster:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: white-lobster
+    hostname: white-lobster
+    ports:
+      - "11434:11434"   # Ollama API
+      - "8585:8585"     # LocalGPT daemon
+      - "8443:8443"     # code-server (VS Code in browser)
+      - "8888:80"       # Apache (the dashboard result)
+    volumes:
+      - lobster-ollama:/root/.ollama
+      - lobster-workspace:/workspace
+      # Note: /root/.localgpt NOT mounted as volume — config comes from Dockerfile
+      # and chaos-mode scripts write directly to container filesystem
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=2          # GPU can handle 2 small models
+      - OLLAMA_GPU_OVERHEAD=256000000       # Reserve 256MB for system
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+        limits:
+          memory: 8G
+    restart: unless-stopped
+
+volumes:
+  lobster-ollama:
+  lobster-workspace:

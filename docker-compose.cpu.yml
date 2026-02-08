@@ -1,0 +1,37 @@
+# White Lobster — CPU ONLY (no GPU)
+# Works anywhere — Linux, Mac, Windows, VPS, potato
+#
+# Usage: docker compose -f docker-compose.cpu.yml up -d
+
+version: "3.8"
+
+services:
+  white-lobster:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: white-lobster
+    hostname: white-lobster
+    ports:
+      - "11434:11434"   # Ollama API
+      - "8585:8585"     # LocalGPT daemon
+      - "8443:8443"     # code-server (VS Code in browser)
+      - "8888:80"       # Apache (the dashboard result)
+    volumes:
+      - lobster-ollama:/root/.ollama
+      - lobster-workspace:/workspace
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=1          # CPU-only, one at a time
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+    restart: unless-stopped
+
+volumes:
+  lobster-ollama:
+  lobster-workspace:

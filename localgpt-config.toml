@@ -1,0 +1,16 @@
+# LocalGPT config template for White Lobster
+# Copy to ~/.localgpt/config.toml inside the container
+
+[agent]
+# Switch this to test different models
+default_model = "ollama/qwen2.5-coder:3b"
+
+[providers.ollama]
+base_url = "http://localhost:11434"
+# No API key needed for Ollama
+
+[heartbeat]
+enabled = false  # Save CPU — no background polling
+
+[memory]
+workspace = "/root/.localgpt/workspace"
