@@ -1,7 +1,7 @@
 # White Lobster — Clean Debian + Ollama + LocalGPT + code-server + Apache
 # CPU-only, minimal, everything from scratch
 
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG=C.UTF-8
