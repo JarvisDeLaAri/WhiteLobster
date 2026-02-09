@@ -42,6 +42,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends zstd \
     && tar --use-compress-program=unzstd -xf /tmp/ollama.tar.zst -C /tmp/ollama-extract \
     && cp /tmp/ollama-extract/bin/ollama /usr/local/bin/ollama \
     && chmod +x /usr/local/bin/ollama \
+    && cp -r /tmp/ollama-extract/lib/ollama /usr/lib/ollama 2>/dev/null || true \
     && rm -rf /tmp/ollama.tar.zst /tmp/ollama-extract \
     && rm -rf /var/lib/apt/lists/*
 

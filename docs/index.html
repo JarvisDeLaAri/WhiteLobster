@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🦞⚪ White Lobster Scoreboard</title>
+<title>🦞⚪ White Lobster Results — GPU</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -258,8 +258,6 @@ let hoverCol = -1;
 let currentMode = 'gpu';
 
 async function load() {
-  const r = await fetch('/api/data?mode=' + currentMode);
-  DATA = await r.json();
   if (!DATA.notes) DATA.notes = {};
   updateModeButtons();
   render();
@@ -350,7 +348,7 @@ function render() {
       const val = s != null ? s : '·';
       const noteKey = `${m.name}__${i}`;
       const hasNote = DATA.notes[noteKey] ? ' *' : '';
-      html += `<td class="score-cell ${cls}" data-model="${m.name}" data-step="${i}" data-row="${ri}" data-col="${i}" onclick="openTooltip(event, '${m.name}', ${i})"><span class="val">${val}${hasNote}</span></td>`;
+      html += `<td class="score-cell ${cls}" data-model="${m.name}" data-step="${i}" data-row="${ri}" data-col="${i}" title="Score" data-noop=" '${m.name}', ${i})"><span class="val">${val}${hasNote}</span></td>`;
     }
 
     html += `<td class="total-cell ${totalClass(total)}">${total}/20</td>`;

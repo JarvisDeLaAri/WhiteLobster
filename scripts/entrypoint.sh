@@ -38,6 +38,15 @@ echo "  LocalGPT:      localgpt chat"
 echo "========================================="
 echo ""
 echo "Run /scripts/pull-models.sh to download models"
+
+# Fix GPU support: install full Ollama with CUDA runners if missing
+if [ ! -d /usr/lib/ollama ]; then
+  echo "Installing Ollama CUDA runners..."
+  curl -fsSL -o /tmp/ollama.tar.zst https://github.com/ollama/ollama/releases/latest/download/ollama-linux-amd64.tar.zst
+  tar --use-compress-program=unzstd -xf /tmp/ollama.tar.zst -C /usr
+  rm -f /tmp/ollama.tar.zst
+  echo "✅ Ollama CUDA runners installed"
+fi
 echo ""
 
 # Keep container alive

@@ -6,7 +6,8 @@
       "tier": "impossible",
       "ctx": "2K",
       "chat": true,
-      "summary": "Absolute floor of intelligence. Might produce word salad."
+      "summary": "Absolute floor of intelligence. Might produce word salad.",
+      "tools": false
     },
     {
       "name": "functiongemma:270m",
@@ -14,7 +15,8 @@
       "tier": "impossible",
       "ctx": "8K",
       "chat": false,
-      "summary": "Google's tool-calling only. Can't freestyle, single-turn."
+      "summary": "Google's tool-calling only. Can't freestyle, single-turn.",
+      "tools": true
     },
     {
       "name": "smollm2:360m",
@@ -22,7 +24,8 @@
       "tier": "impossible",
       "ctx": "2K",
       "chat": true,
-      "summary": "Marginally less hopeless than 135m."
+      "summary": "Marginally less hopeless than 135m.",
+      "tools": false
     },
     {
       "name": "qwen2.5:0.5b",
@@ -30,7 +33,8 @@
       "tier": "impossible",
       "ctx": "32K",
       "chat": true,
-      "summary": "General purpose but tiny. Struggles with code."
+      "summary": "General purpose but tiny. Struggles with code.",
+      "tools": false
     },
     {
       "name": "qwen2.5-coder:0.5b",
@@ -38,7 +42,8 @@
       "tier": "impossible",
       "ctx": "32K",
       "chat": true,
-      "summary": "Code-focused but stunted at this size."
+      "summary": "Code-focused but stunted at this size.",
+      "tools": false
     },
     {
       "name": "qwen3:0.6b",
@@ -46,7 +51,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Best tiny reasoner. Qwen3 improved reasoning at small sizes."
+      "summary": "Best tiny reasoner. Qwen3 improved reasoning at small sizes.",
+      "tools": true
     },
     {
       "name": "eternis-tc:0.6b",
@@ -54,7 +60,8 @@
       "tier": "hard",
       "ctx": "4K",
       "chat": true,
-      "summary": "HF tool-calling fine-tune of Qwen3-0.6B. Chat + tools."
+      "summary": "HF tool-calling fine-tune of Qwen3-0.6B. Chat + tools.",
+      "tools": true
     },
     {
       "name": "llama3.2:1b",
@@ -62,7 +69,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Meta's tiny entry. Decent instruction following."
+      "summary": "Meta's tiny entry. Decent instruction following.",
+      "tools": false
     },
     {
       "name": "gemma3:1b",
@@ -70,7 +78,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Google's latest tiny. Good at structured output."
+      "summary": "Google's latest tiny. Good at structured output.",
+      "tools": true
     },
     {
       "name": "qwen2.5:1.5b",
@@ -78,7 +87,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Decent reasoning, light code ability."
+      "summary": "Decent reasoning, light code ability.",
+      "tools": false
     },
     {
       "name": "qwen2.5-coder:1.5b",
@@ -86,7 +96,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Sweet spot coder. Big quality jump over 0.5b."
+      "summary": "Sweet spot coder. Big quality jump over 0.5b.",
+      "tools": false
     },
     {
       "name": "deepseek-r1:1.5b",
@@ -94,7 +105,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Chain-of-thought reasoner. Thinks out loud."
+      "summary": "Chain-of-thought reasoner. Thinks out loud.",
+      "tools": false
     },
     {
       "name": "smollm2:1.7b",
@@ -102,7 +114,8 @@
       "tier": "hard",
       "ctx": "2K",
       "chat": true,
-      "summary": "SmolLM's best shot. Crippled by 2K context."
+      "summary": "SmolLM's best shot. Crippled by 2K context.",
+      "tools": true
     },
     {
       "name": "qwen3:1.7b",
@@ -110,7 +123,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Solid reasoning for size. Good orchestrator candidate."
+      "summary": "Solid reasoning for size. Good orchestrator candidate.",
+      "tools": true
     },
     {
       "name": "codegemma:2b",
@@ -118,7 +132,8 @@
       "tier": "hard",
       "ctx": "8K",
       "chat": true,
-      "summary": "Google code model. Good at infilling/completions."
+      "summary": "Google code model. Good at infilling/completions.",
+      "tools": false
     },
     {
       "name": "qwen3-vl:2b",
@@ -126,7 +141,8 @@
       "tier": "hard",
       "ctx": "32K",
       "chat": true,
-      "summary": "Vision model. Can see screenshots of its own work."
+      "summary": "Vision model. Can see screenshots of its own work.",
+      "tools": false
     },
     {
       "name": "qwen2.5:3b",
@@ -134,7 +150,8 @@
       "tier": "medium",
       "ctx": "32K",
       "chat": true,
-      "summary": "Solid general purpose. Real contender territory."
+      "summary": "Solid general purpose. Real contender territory.",
+      "tools": true
     },
     {
       "name": "qwen2.5-coder:3b",
@@ -142,7 +159,8 @@
       "tier": "medium",
       "ctx": "32K",
       "chat": true,
-      "summary": "\u2605 Best coder in our range. The favorite."
+      "summary": "\u2605 Best coder in our range. The favorite.",
+      "tools": true
     },
     {
       "name": "llama3.2:3b",
@@ -150,7 +168,8 @@
       "tier": "medium",
       "ctx": "32K",
       "chat": true,
-      "summary": "Solid Meta baseline. Good all-rounder."
+      "summary": "Solid Meta baseline. Good all-rounder.",
+      "tools": true
     },
     {
       "name": "starcoder2:3b",
@@ -158,7 +177,8 @@
       "tier": "medium",
       "ctx": "16K",
       "chat": false,
-      "summary": "BigCode completion model. Not chat-tuned."
+      "summary": "BigCode completion model. Not chat-tuned.",
+      "tools": false
     },
     {
       "name": "qwen3:4b",
@@ -166,7 +186,8 @@
       "tier": "medium",
       "ctx": "32K",
       "chat": true,
-      "summary": "\u2605 Best reasoning in range. Largest model we test."
+      "summary": "\u2605 Best reasoning in range. Largest model we test.",
+      "tools": true
     },
     {
       "name": "qwen3-vl:4b",
@@ -174,7 +195,8 @@
       "tier": "medium",
       "ctx": "32K",
       "chat": true,
-      "summary": "Vision + reasoning. Can debug by looking at UI."
+      "summary": "Vision + reasoning. Can debug by looking at UI.",
+      "tools": false
     },
     {
       "name": "qwen3-tc:4b",
@@ -182,7 +204,8 @@
       "tier": "medium",
       "ctx": "4K",
       "chat": true,
-      "summary": "HF tool-calling champion. 2K+ downloads."
+      "summary": "HF tool-calling champion. 2K+ downloads.",
+      "tools": true
     }
   ],
   "steps": [
