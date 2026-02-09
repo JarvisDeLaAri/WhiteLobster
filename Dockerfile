@@ -41,7 +41,7 @@ RUN curl -L -o /usr/local/bin/ollama https://github.com/ollama/ollama/releases/l
 # ============================================
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
-RUN cargo install localgpt
+RUN cargo install --git https://github.com/localgpt-app/localgpt.git --no-default-features
 
 # ============================================
 # 4. Install code-server (VS Code in browser)
