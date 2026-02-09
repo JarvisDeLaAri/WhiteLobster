@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ============================================
 # 2. Install Ollama (binary download — install.sh fails in Docker)
 # ============================================
-RUN curl -fsSL -o /usr/local/bin/ollama https://ollama.com/download/ollama-linux-amd64 \
+RUN curl -L -o /usr/local/bin/ollama https://github.com/ollama/ollama/releases/latest/download/ollama-linux-amd64 \
     && chmod +x /usr/local/bin/ollama
 
 # ============================================
