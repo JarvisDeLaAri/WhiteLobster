@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg \
     git \
     build-essential \
+    pkg-config \
+    libssl-dev \
+    cmake \
     python3 \
     python3-pip \
     python3-venv \
