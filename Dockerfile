@@ -31,9 +31,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # ============================================
-# 2. Install Ollama (CPU-only)
+# 2. Install Ollama (binary download — install.sh fails in Docker)
 # ============================================
-RUN curl -fsSL https://ollama.com/install.sh | sh
+RUN curl -fsSL -o /usr/local/bin/ollama https://ollama.com/download/ollama-linux-amd64 \
+    && chmod +x /usr/local/bin/ollama
 
 # ============================================
 # 3. Install Rust + LocalGPT
