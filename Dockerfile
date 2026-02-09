@@ -36,8 +36,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ============================================
 # 2. Install Ollama (binary download — install.sh fails in Docker)
 # ============================================
-RUN curl -L -o /usr/local/bin/ollama https://github.com/ollama/ollama/releases/latest/download/ollama-linux-amd64 \
-    && chmod +x /usr/local/bin/ollama
+RUN apt-get update && apt-get install -y --no-install-recommends zstd \
+    && curl -fsSL https://github.com/ollama/ollama/releases/latest/download/ollama-linux-amd64.tar.zst -o /tmp/ollama.tar.zst \
+    && mkdir -p /tmp/ollama-extract \
+    && tar --use-compress-program=unzstd -xf /tmp/ollama.tar.zst -C /tmp/ollama-extract \
+    && cp /tmp/ollama-extract/bin/ollama /usr/local/bin/ollama \
+    && chmod +x /usr/local/bin/ollama \
+    && rm -rf /tmp/ollama.tar.zst /tmp/ollama-extract \
+    && rm -rf /var/lib/apt/lists/*
 
 # ============================================
 # 3. Install Rust + LocalGPT
