@@ -298,4 +298,4 @@ TOTAL: ~0.95GB
 | `scripts/entrypoint.sh` | Container startup script |
 | `scripts/cleanup.sh` | Wipe between model tests |
 | `scripts/orchestrator.py` | Phase 2: multi-agent orchestration loop |
-| `scoreboard/` | Ranking dashboard (port 10007) |
+| `scoreboard/` | Ranking dashboard |

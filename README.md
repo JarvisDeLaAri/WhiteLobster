@@ -84,7 +84,7 @@ docker exec -it white-lobster bash
 | [docker-compose.cpu.yml](docker-compose.cpu.yml) | CPU-only deployment |
 | [troubleshoot/](troubleshoot/) | Known issues and fixes |
 | [scripts/](scripts/) | Chaos mode, model pulling, cleanup, orchestrator |
-| [scoreboard/](scoreboard/) | Live scoring dashboard (port 10007) |
+| [scoreboard/](scoreboard/) | Live scoring dashboard |
 
 ---
 
