@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🦞⚪ White Lobster Results — GPU</title>
+<title>🦞⚪ White Lobster — GPU Results</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -214,10 +214,7 @@
     <span><div class="dot" style="background:#d4c46c"></div> 🔥 Hard (500M-2B)</span>
     <span><div class="dot" style="background:#6cd4a0"></div> ⚡ Medium (2B-4B)</span>
   </div>
-  <div class="mode-toggle">
-    <button class="mode-btn" id="btnGpu" onclick="switchMode('gpu')">🟢 GPU</button>
-    <button class="mode-btn" id="btnCpu" onclick="switchMode('cpu')">🔵 CPU</button>
-  </div>
+  <div class="mode-toggle"><span style="color:#6d6;font-weight:600;">🟢 GPU Results (Quadro P2200)</span></div>
   <div class="rating-legend">
     <span>0 = fail</span>
     <span>1 = partial</span>
@@ -259,6 +256,7 @@ let currentMode = 'gpu';
 
 async function load() {
   if (!DATA.notes) DATA.notes = {};
+  currentMode = 'gpu';
   updateModeButtons();
   render();
   setupHover();
@@ -348,7 +346,7 @@ function render() {
       const val = s != null ? s : '·';
       const noteKey = `${m.name}__${i}`;
       const hasNote = DATA.notes[noteKey] ? ' *' : '';
-      html += `<td class="score-cell ${cls}" data-model="${m.name}" data-step="${i}" data-row="${ri}" data-col="${i}" title="Score" data-noop=" '${m.name}', ${i})"><span class="val">${val}${hasNote}</span></td>`;
+      html += `<td class="score-cell ${cls}" data-model="${m.name}" data-step="${i}" data-row="${ri}" data-col="${i}" data-static=" '${m.name}', ${i})"><span class="val">${val}${hasNote}</span></td>`;
     }
 
     html += `<td class="total-cell ${totalClass(total)}">${total}/20</td>`;
@@ -433,7 +431,7 @@ document.addEventListener('click', (e) => {
 });
 
 async function setScore(score) {
-  await fetch('/api/score', {
+  await Promise.resolve({ok:true}); // disabled fetch('{endpoint}', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: currentModel, step: currentStep, score, mode: currentMode })
@@ -444,7 +442,7 @@ async function setScore(score) {
 }
 
 async function clearScore() {
-  await fetch('/api/score', {
+  await Promise.resolve({ok:true}); // disabled fetch('{endpoint}', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: currentModel, step: currentStep, score: 0, mode: currentMode })
@@ -459,7 +457,7 @@ async function clearScore() {
 
 async function saveNotes() {
   const notes = document.getElementById('ttNotes').value;
-  await fetch('/api/notes', {
+  await Promise.resolve({ok:true}); // disabled fetch('{endpoint}', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: currentModel, step: currentStep, notes, mode: currentMode })
@@ -473,7 +471,7 @@ function sortBySize() { sortMode = 'size'; render(); }
 
 async function resetAll() {
   if (!confirm('Reset ALL scores? This cannot be undone.')) return;
-  await fetch('/api/reset', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: currentMode }) });
+  await Promise.resolve({ok:true}); // disabled fetch('{endpoint}', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: currentMode }) });
   DATA.scores = {};
   DATA.notes = {};
   render();
