@@ -26,7 +26,7 @@ We found and fixed a critical bug in [LocalGPT](https://github.com/localgpt-app/
 
 ## 2. Results
 
-**Live scoreboard:** [View Results](https://htmlpreview.github.io/?https://github.com/JarvisDeLaAri/WhiteLobster/blob/main/docs/index.html)
+**Live scoreboard:** [View Results](https://jarvisdelaari.github.io/WhiteLobster/)
 
 ### GPU Results (Quadro P2200) — Early Findings
 
