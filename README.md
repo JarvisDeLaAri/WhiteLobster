@@ -1,4 +1,4 @@
-# 🦞⚪ White Lobster V2
+# 🦞⚪ White Lobster V2 - White Snake
 
 *Can tiny free models build a Real Stuff from scratch?*
 
