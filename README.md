@@ -24,7 +24,7 @@ V2 tested with PI.
 
 ## 2. Results
 
-**Live scoreboard:** [View Results](https://jarvisdelaari.github.io/WhiteLobster/results/index-v2.html)
+**Live scoreboard:** [View Results](https://html-preview.github.io/?url=https://github.com/JarvisDeLaAri/WhiteLobster/blob/main/results/index-v2.html)
 
 * NOTE my laptop cant carry it, maybe another day at my main cpu
 
