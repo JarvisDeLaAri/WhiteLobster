@@ -1,4 +1,4 @@
-# The White Lobster Exam — 10 Steps
+# The White Snake Exam — 5 Steps
 
 *Progressive difficulty. Even the tiniest model might pass Step 1.*
 
@@ -9,23 +9,7 @@ ALL tests must be done with pi-coding-agent with -p flag as described in [using 
 
 ---
 
-## Step 1 — Can You Talk?
-```
-What is the meaning of life?
-```
-**Pass:** Any coherent response. Doesn't have to be good.
-**Score:** 0 = gibberish, 1 = somewhat coherent, 2 = actually thoughtful
-
----
-
-## Step 2 — Can You Follow Instructions?
-```
-List exactly 5 fruits. Number them 1-5. Nothing else.
-```
-**Pass:** Exactly 5 numbered fruits, no extra text.
-**Score:** 0 = wrong format, 1 = close but extra text, 2 = perfect format
-
----
+ommitted S1+2 of "can you speak", models are significanlty evolved
 
 ## Step 3 — Can You Write a File?
 ```
