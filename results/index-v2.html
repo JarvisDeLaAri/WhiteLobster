@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🦞⚪ White Lobster V2</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0e1a; color: #e0e0e0; min-height: 100vh; }
+.header { text-align: center; padding: 96px; border-bottom: 1px solid #1a2040; }
+.header h1 { font-size: 56px; margin-bottom: 16px; }
+.header .sub { color: #888; font-size: 34px; }
+.legend { display: flex; gap: 80px; justify-content: center; margin: 48px 0; font-size: 28px; color: #666; }
+table { width: 90%; border-collapse: collapse; font-size: 30px; margin: 0 auto; }
+th { background: #0d1220; color: #8a8aaa; font-size: 26px; text-transform: uppercase; padding: 32px 24px; position: sticky; top: 0; z-index: 10; border-bottom: 2px solid #1a2040; text-align: center; }
+th.model { text-align: left; min-width: 560px; }
+td { padding: 32px 24px; text-align: center; border-bottom: 1px solid #111830; }
+td.model { text-align: left; }
+.params { color: #666; font-size: 26px; margin-left: 16px; }
+.rank { font-weight: 700; }
+.rank-1 { color: #ffd700; }
+.rank-2 { color: #c0c0c0; }
+.rank-3 { color: #cd7f32; }
+.s-none { color: #333; }
+.s-0 { color: #ff4444; font-weight: 700; }
+.s-1 { color: #ffaa00; font-weight: 700; }
+.s-2 { color: #44ff44; font-weight: 700; }
+.total { font-weight: 700; font-size: 34px; }
+.total-dead { color: #ff4444; }
+.total-alive { color: #ff8844; }
+.total-promise { color: #ffcc00; }
+.total-good { color: #88ff44; }
+.total-genius { color: #44ffcc; }
+.legend2 { display: flex; gap: 80px; justify-content: center; margin: 24px 0 48px; font-size: 26px; }
+.legend2 .c-red { color: #ff4444; }
+.legend2 .c-orange { color: #ff8844; }
+.legend2 .c-yellow { color: #ffcc00; }
+.legend2 .c-green { color: #88ff44; }
+tr.tier-impossible { background: #2a1010; }
+tr.tier-hard { background: #2a2a10; }
+tr.tier-medium { background: #102a10; }
+tr.tier-large { background: #0a1a0a; }
+tr:hover { background: #151a30 !important; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🦞⚪ White Lobster Scoreboard</h1>
+  <div class="sub">V2 — Laptop White Snake Test</div>
+</div>
+<div class="legend">
+  <span>0 = fail</span>
+  <span>1 = partial</span>
+  <span>2 = pass</span>
+  <span>Score /10</span>
+</div>
+<div class="legend2">
+  <span class="c-red">0-1 = brain dead</span>
+  <span class="c-orange">2-5 = can write code, can't follow instructions</span>
+  <span class="c-yellow">6-9 = can help micro dev</span>
+  <span class="c-green">9-10 = can write a mini-game</span>
+</div>
+<table>
+<thead><tr>
+  <th>#</th>
+  <th class="model">Model</th>
+  <th>S3</th>
+  <th>S4</th>
+  <th>S5</th>
+  <th>S6</th>
+  <th>S7</th>
+  <th>Total</th>
+</tr></thead>
+<tbody>
+<tr class="tier-impossible">
+  <td class="rank">-</td>
+  <td class="model">qwen3.5:0.8b<span class="params">0.8B</span></td>
+  <td class="s-2">2</td>
+  <td class="s-1">1</td>
+  <td class="s-1">1</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-alive">4/10</td>
+</tr>
+<tr class="tier-hard">
+  <td class="rank">-</td>
+  <td class="model">qwen3.5:2b<span class="params">2B</span></td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-none">·</td>
+  <td class="total total-promise">8/10</td>
+</tr>
+<tr class="tier-medium">
+  <td class="rank">-</td>
+  <td class="model">qwen3.5:4b<span class="params">4B</span></td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-none">·</td>
+  <td class="total total-promise">8/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">qwen3.5:9b<span class="params">9B</span></td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-2">2</td>
+  <td class="s-none">·</td>
+  <td class="total total-promise">8/10</td>
+</tr>
+<tr class="tier-impossible">
+  <td class="rank">-</td>
+  <td class="model">falcon3:1b<span class="params">1B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-medium">
+  <td class="rank">-</td>
+  <td class="model">falcon3:3b<span class="params">3B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">falcon3:7b<span class="params">7B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">falcon3:10b<span class="params">10B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-hard">
+  <td class="rank">-</td>
+  <td class="model">deepseek-r1:1.5b<span class="params">1.5B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">deepseek-r1:7b<span class="params">7B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">deepseek-r1:8b<span class="params">8B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">deepseek-r1:14b<span class="params">14B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-hard">
+  <td class="rank">-</td>
+  <td class="model">gemma4:e2b<span class="params">2B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-medium">
+  <td class="rank">-</td>
+  <td class="model">gemma4:e4b<span class="params">4B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-medium">
+  <td class="rank">-</td>
+  <td class="model">granite4.1:3b<span class="params">3B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">granite4.1:8b<span class="params">8B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-hard">
+  <td class="rank">-</td>
+  <td class="model">smollm2:1.7b<span class="params">1.7B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-medium">
+  <td class="rank">-</td>
+  <td class="model">nemotron-3-nano:4b<span class="params">4B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+<tr class="tier-large">
+  <td class="rank">-</td>
+  <td class="model">rnj-1:8b<span class="params">8B</span></td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="s-none">·</td>
+  <td class="total total-dead">0/10</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
